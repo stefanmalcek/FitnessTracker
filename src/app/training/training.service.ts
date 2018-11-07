@@ -22,6 +22,11 @@ export class TrainingService {
         return { ...this.runningExercise };
     }
 
+    getCompletedOrCancelledExercises(): Exercise[] {
+        console.log(this.exercises);
+        return this.exercises.slice();
+    }
+
     startExercise(selectedId: string) {
         this.runningExercise = this.availableExercises.find(e => e.id === selectedId);
         this.exerciseChanged.next({ ...this.runningExercise });
