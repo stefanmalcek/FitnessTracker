@@ -16,6 +16,7 @@ import { StopTrainingComponent } from './training/current-training/stop-training
 import { NewTrainingComponent } from './training/new-training/new-training.component';
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { TrainingComponent } from './training/training.component';
+import { TrainingService } from './training/training.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
@@ -42,7 +43,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    TrainingService
   ],
   bootstrap: [AppComponent],
   // When we does not instantiate a component by selector. 
