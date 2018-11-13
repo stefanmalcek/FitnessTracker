@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy {
   displayedColumns = ['date', 'name', 'duration', 'calories', 'state'];
   dataSource = new MatTableDataSource<Exercise>();
-  private exChangedSubscription: Subscription;
+  private exchangedSubscription: Subscription;
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -20,7 +20,7 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy 
   constructor(private trainingService: TrainingService) { }
 
   ngOnInit() {
-    this.exChangedSubscription = this.trainingService.finishedExercisesChanged
+    this.exchangedSubscription = this.trainingService.finishedExercisesChanged
       .subscribe((exercise: Exercise[]) => {
         this.dataSource.data = exercise;
       });
@@ -37,6 +37,8 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngOnDestroy() {
-    this.exChangedSubscription.unsubscribe();
+    if (this.exchangedSubscription) {
+      this.exchangedSubscription.unsubscribe();
+    }
   }
 }
