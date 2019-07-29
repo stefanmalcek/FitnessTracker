@@ -1,9 +1,9 @@
-import { UIService } from 'src/app/shared/ui.service';
+import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Subject, Subscription } from 'rxjs';
-import { Exercise } from "./exercise.model";
-import { Injectable } from "@angular/core";
 import { map } from 'rxjs/operators';
+import { UIService } from 'src/app/shared/ui.service';
+import { Exercise } from './exercise.model';
 
 @Injectable()
 export class TrainingService {
@@ -13,7 +13,7 @@ export class TrainingService {
 
     private availableExercises: Exercise[] = [];
     private runningExercise: Exercise;
-    private fbSubs: Subscription[] = []
+    private fbSubs: Subscription[] = [];
 
     constructor(
         private db: AngularFirestore,
@@ -31,7 +31,7 @@ export class TrainingService {
                         duration: doc.payload.doc.data()['duration'],
                         calories: doc.payload.doc.data()['calories']
                     };
-                })
+                });
             }))
             .subscribe((exercises: Exercise[]) => {
                 this.uiService.loadingStateChanged.next(false);
@@ -56,7 +56,7 @@ export class TrainingService {
     }
 
     startExercise(selectedId: string) {
-        //this.db.doc('availableExercises/' + selectedId).update({ lastSelected: new Date() })
+        // this.db.doc('availableExercises/' + selectedId).update({ lastSelected: new Date() })
         this.runningExercise = this.availableExercises.find(e => e.id === selectedId);
         this.exerciseChanged.next({ ...this.runningExercise });
     }
