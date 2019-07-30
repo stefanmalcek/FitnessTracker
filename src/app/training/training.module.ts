@@ -7,6 +7,9 @@ import { NewTrainingComponent } from './new-training/new-training.component';
 import { PastTrainingsComponent } from './past-trainings/past-trainings.component';
 import { TrainingRoutingModule } from './training-routing.module';
 import { TrainingComponent } from './training.component';
+import { StoreModule } from '@ngrx/store';
+import { trainingReducer } from './training.reducer';
+
 
 @NgModule({
     declarations: [
@@ -19,10 +22,11 @@ import { TrainingComponent } from './training.component';
     imports: [
         AngularFirestoreModule,
         SharedModule,
-        TrainingRoutingModule
+        TrainingRoutingModule,
+        StoreModule.forFeature('training', trainingReducer)
     ],
     exports: [],
-    // When we does not instantiate a component by selector. 
+    // When we does not instantiate a component by selector.
     entryComponents: [StopTrainingComponent]
 })
 export class TrainingModule { }

@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private store: Store<fromRoot.State>) { }
+    private store: Store<fromRoot.State>
+  ) { }
 
   ngOnInit() {
     this.isAuth$ = this.store.select(fromRoot.getIsAuth);

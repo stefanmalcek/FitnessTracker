@@ -16,7 +16,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private store: Store<fromRoot.State>) { }
+    private store: Store<fromRoot.State>
+  ) { }
 
   ngOnInit() {
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
