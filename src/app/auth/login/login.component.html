@@ -16,3 +16,11 @@
     <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
   </form>
 </section>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-form-field>
+    <input matInput disabled class="disabled" placeholder="Email" value="test@test.com">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput disabled class="disabled" placeholder="Password" value="123456">
+  </mat-form-field>
+</div>
