@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { StopTrainingComponent } from './stop-training.component';
 import { TrainingService } from '../training.service';
 import * as fromTraining from '../training.reducer';
@@ -13,7 +13,7 @@ import { take } from 'rxjs/operators';
 })
 export class CurrentTrainingComponent implements OnInit {
   progress = 0;
-  timer: number;
+  timer: any;
 
   constructor(
     private dialog: MatDialog,
