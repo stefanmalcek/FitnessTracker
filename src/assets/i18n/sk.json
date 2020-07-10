@@ -1,0 +1,8 @@
+{
+    "auth": {
+        "login": {
+            "button": "Prihlásiť",
+            "example": "Ukážkové prihlasovacie údaje"
+        }
+    }
+}

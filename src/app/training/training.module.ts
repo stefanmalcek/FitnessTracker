@@ -9,7 +9,7 @@ import { TrainingRoutingModule } from './training-routing.module';
 import { TrainingComponent } from './training.component';
 import { StoreModule } from '@ngrx/store';
 import { trainingReducer } from './training.reducer';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     declarations: [
@@ -23,7 +23,10 @@ import { trainingReducer } from './training.reducer';
         AngularFirestoreModule,
         SharedModule,
         TrainingRoutingModule,
-        StoreModule.forFeature('training', trainingReducer)
+        StoreModule.forFeature('training', trainingReducer),
+        TranslateModule.forChild({
+            extend: true
+        })
     ],
     exports: [],
     // When we does not instantiate a component by selector.

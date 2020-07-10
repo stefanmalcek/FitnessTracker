@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,6 +17,10 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { UIService } from './shared/ui.service';
 import { TrainingService } from './training/training.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { HttpLoaderFactory } from './shared/shared.module';
+import { LangService } from './lang.service';
 
 @NgModule({
   declarations: [
@@ -34,12 +38,22 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppRoutingModule,
     AuthModule,
     MaterialModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
+    LangService,
     AuthService,
     TrainingService,
-    UIService
+    UIService,
+    { provide: LOCALE_ID, deps: [LangService], useFactory: (langService: LangService) => langService.currentLanguage },
+    TranslateService,
   ],
   bootstrap: [AppComponent]
 })

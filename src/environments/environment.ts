@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  defaultLanguage: 'en',
   firebase: {
     apiKey: 'AIzaSyCJobcXSwut2G8e98kDiT1S0zdYHYq60uA',
     authDomain: 'fitnesstracker-77db6.firebaseapp.com',

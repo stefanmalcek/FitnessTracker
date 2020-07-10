@@ -12,12 +12,12 @@
       <mat-error>Missing password.</mat-error>
     </mat-form-field>
     <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary"
-      [disabled]="loginForm.invalid">Login</button>
+      [disabled]="loginForm.invalid">{{'auth.login.button' | translate}}</button>
     <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
   </form>
 </section>
 <div class="mt-50" fxLayout="column" fxLayoutAlign="center center">
-  <h4>Available Login</h4>
+  <h4>{{'auth.login.example' | translate}}</h4>
   <mat-form-field>
     <input matInput disabled class="disabled" placeholder="Email" value="test@test.com">
   </mat-form-field>
