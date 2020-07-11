@@ -1,8 +1,18 @@
 {
-    "auth": {
-        "login": {
-            "button": "Login",
-            "example": "Example login"
-        }
+  "auth": {
+    "login": {
+      "email": {
+        "placeholder": "Email",
+        "hint": "Please enter a valid email.",
+        "error": "Invalid or missing email."
+      },
+      "password": {
+        "placeholder": "Password",
+        "hint": "Please enter your password.",
+        "error": "Missing password."
+      },
+      "button": "Login",
+      "example": "Example login"
     }
+  }
 }

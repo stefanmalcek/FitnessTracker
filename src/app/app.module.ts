@@ -1,4 +1,4 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -18,8 +18,8 @@ import { UIService } from './shared/ui.service';
 import { TrainingService } from './training/training.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
-import { HttpLoaderFactory } from './shared/shared.module';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HttpLoaderFactory, SharedModule } from './shared/shared.module';
 import { LangService } from './lang.service';
 
 @NgModule({
@@ -39,6 +39,7 @@ import { LangService } from './lang.service';
     AuthModule,
     MaterialModule,
     StoreModule.forRoot(reducers),
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -48,12 +49,12 @@ import { LangService } from './lang.service';
     })
   ],
   providers: [
+    TranslateService,
     LangService,
     AuthService,
     TrainingService,
     UIService,
     { provide: LOCALE_ID, deps: [LangService], useFactory: (langService: LangService) => langService.currentLanguage },
-    TranslateService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,8 +1,18 @@
 {
-    "auth": {
-        "login": {
-            "button": "Prihlásiť",
-            "example": "Ukážkové prihlasovacie údaje"
-        }
+  "auth": {
+    "login": {
+      "email": {
+        "placeholder": "Email",
+        "hint": "Prosím zadajte platný email.",
+        "error": "Neplatný alebo nezadaný email."
+      },
+      "password": {
+        "placeholder": "Heslo",
+        "hint": "Prosím zadajte svoje heslo.",
+        "error": "Nezadané heslo."
+      },
+      "button": "Prihlásiť",
+      "example": "Ukážkové prihlasovacie údaje"
     }
+  }
 }

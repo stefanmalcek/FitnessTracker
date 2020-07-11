@@ -2,14 +2,15 @@
   <form [formGroup]="loginForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
     (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input type="email" matInput placeholder="Email" formControlName="email">
-      <mat-hint>Please enter a valid email.</mat-hint>
-      <mat-error>Invalid or missing email.</mat-error>
+      <input type="email" matInput [placeholder]="'auth.login.email.placeholder' | translate" formControlName="email">
+      <mat-hint>{{'auth.login.email.hint' | translate}}</mat-hint>
+      <mat-error>{{'auth.login.email.error' | translate}}</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input type="password" matInput placeholder="Password" formControlName="password">
-      <mat-hint>Please enter your password.</mat-hint>
-      <mat-error>Missing password.</mat-error>
+      <input type="password" matInput [placeholder]="'auth.login.password.placeholder' | translate"
+        formControlName="password">
+      <mat-hint>{{'auth.login.password.hint' | translate}}</mat-hint>
+      <mat-error>{{'auth.login.password.error' | translate}}</mat-error>
     </mat-form-field>
     <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary"
       [disabled]="loginForm.invalid">{{'auth.login.button' | translate}}</button>
@@ -19,9 +20,9 @@
 <div class="mt-50" fxLayout="column" fxLayoutAlign="center center">
   <h4>{{'auth.login.example' | translate}}</h4>
   <mat-form-field>
-    <input matInput disabled class="disabled" placeholder="Email" value="test@test.com">
+    <input matInput disabled class="disabled" [attr.placeholder]="'auth.login.email.placeholder'" value="test@test.com">
   </mat-form-field>
   <mat-form-field>
-    <input matInput disabled class="disabled" placeholder="Password" value="123456">
+    <input matInput disabled class="disabled" [attr.placeholder]="'auth.login.password.placeholder'" value="123456">
   </mat-form-field>
 </div>
