@@ -32,5 +32,11 @@
       "terms": "Agree to Terms and Conditions.",
       "button": "Sign Up!"
     }
+  },
+  "navigation": {
+    "signUp": "Sign Up",
+    "login": "Login",
+    "training": "Training",
+    "logout": "Logout"
   }
 }

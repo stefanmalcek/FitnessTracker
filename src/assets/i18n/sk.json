@@ -32,5 +32,11 @@
       "terms": "Súhlas so spracovaním údajov",
       "button": "Registrovať"
     }
+  },
+  "navigation": {
+    "signUp": "Registrácia",
+    "login": "Prihlásenie",
+    "training": "Tréning",
+    "logout": "Odhlásenie"
   }
 }
