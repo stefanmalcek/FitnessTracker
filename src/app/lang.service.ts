@@ -40,10 +40,10 @@ export class LangService {
     if (savedLang) {
       return savedLang;
     }
-    const browserLang = this.translateService.getBrowserLang();
-    if (browserLang.match(/en|sk/)) {
-      return browserLang;
-    }
+    // const browserLang = this.translateService.getBrowserLang();
+    // if (browserLang.match(/en|sk/)) {
+    //   return browserLang;
+    // }
     return environment.defaultLanguage;
   }
 }

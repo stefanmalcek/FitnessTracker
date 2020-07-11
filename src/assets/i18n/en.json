@@ -13,6 +13,24 @@
       },
       "button": "Login",
       "example": "Example login"
+    },
+    "signUp": {
+      "email": {
+        "placeholder": "Your email",
+        "empty": "Field must not be empty.",
+        "invalid": "Email is invalid."
+      },
+      "password": {
+        "placeholder": "Your password",
+        "hint": "Should be at least 6 characters long.",
+        "inputLength": "{{length}} / 6",
+        "tooShort": "Has to be at least 6 characters long."
+      },
+      "birthday": {
+        "placeholder": "Your birthday"
+      },
+      "terms": "Agree to Terms and Conditions.",
+      "button": "Sign Up!"
     }
   }
 }

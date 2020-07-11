@@ -13,6 +13,24 @@
       },
       "button": "Prihlásiť",
       "example": "Ukážkové prihlasovacie údaje"
+    },
+    "signUp": {
+      "email": {
+        "placeholder": "Váš email",
+        "empty": "Položka je povinná.",
+        "invalid": "Email je neplatný."
+      },
+      "password": {
+        "placeholder": "Vaše heslo",
+        "hint": "Mal by obsahovať najmenej 6 znakov.",
+        "inputLength": "{{length}} / 6",
+        "tooShort": "Musí obsahovať aspoň 6 znakov."
+      },
+      "birthday": {
+        "placeholder": "Váš dátum narodenia"
+      },
+      "terms": "Súhlas so spracovaním údajov",
+      "button": "Registrovať"
     }
   }
 }
